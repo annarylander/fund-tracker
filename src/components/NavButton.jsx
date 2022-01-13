@@ -24,15 +24,16 @@ const Button = styled.button`
     `}
 `;
 
-const PurpleButton = styled(Button)`
-  background: #31081f;
+const GreenButton = styled(Button)`
+  background: #437567;
+  color: white;
 `;
 
 export default function NavButton(props) {
   return (
     <>
-      {props.purple ? (
-        <PurpleButton {...props}>{props.children}</PurpleButton>
+      {props.green ? (
+        <GreenButton {...props}>{props.children}</GreenButton>
       ) : (
         <Button {...props}>{props.children}</Button>
       )}

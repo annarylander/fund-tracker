@@ -7,11 +7,12 @@ const SearchContainer = styled.div`
   width: 360px;
   height: 48px;
   background: #f2f2f2;
-  border-radius: 0px;
+  border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   transition: all 0.3s ease;
+  padding-left: 5px;
 `;
 
 const SearchInput = styled.input`
@@ -21,8 +22,9 @@ const SearchInput = styled.input`
   width: 100%;
   background-color: transparent;
   outline: none;
-  font-size: 16px;
+  font-size: 18px;
   border: 1px solid transparent;
+  padding-left: 40px;
 `;
 
 const IconButton = styled.button`
@@ -33,7 +35,6 @@ const IconButton = styled.button`
   z-index: 1;
   cursor: pointer;
   background: none;
-
 `;
 
 export default function Searchbar() {

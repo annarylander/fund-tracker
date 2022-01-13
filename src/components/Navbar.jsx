@@ -1,16 +1,17 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import LogoImg from "../assets/logo2.png";
 
 const NavbarContainer = styled.nav`
   width: 100%;
   height: ${(props) => (props.extendNavbar ? "100vh" : "80px")};
-  background-color: #1F332E;
+  background-color: #55B77C;
   display: flex;
   flex-direction: column;
 
   @media (min-width: 700px) {
-      height: 80px;
+    height: 80px;
   }
 `;
 
@@ -25,7 +26,7 @@ const RightContainer = styled.div`
   flex: 30%;
   display: flex;
   justify-content: flex-end;
-  padding-right: 50px;
+  // padding-right: 50px;
 `;
 
 const InnerContainer = styled.div`
@@ -41,7 +42,7 @@ const NavbarLinkContainer = styled.div`
 
 const NavbarLink = styled(Link)`
   color: white;
-  font-size: x-large;
+  font-size: large;
   font-family: Helvetica, sans-serif;
   text-decoration: none;
   margin 10px;
@@ -60,7 +61,7 @@ const NavbarLink = styled(Link)`
 
 const NavbarLinkExtended = styled(Link)`
   color: white;
-  font-size: x-large;
+  font-size: large;
   font-family: Helvetica, sans-serif;
   text-decoration: none;
   margin 10px;
@@ -69,10 +70,14 @@ const NavbarLinkExtended = styled(Link)`
   text-align: center;
 `;
 
-const logo = styled.img`
-  margin: 10px;
+const Logo = styled.img`
+  margin: 0px;
   max-width: 180;
   height: auto;
+
+  @media (min-width: 700px) {
+}
+
 `;
 
 const OpenLinksButton = styled.button`
@@ -119,7 +124,7 @@ export default function Navbar() {
             </NavbarLinkContainer>
           </LeftContainer>
           <RightContainer>
-            <NavbarLink to="/"> ＄ </NavbarLink>{" "}
+            <Logo src={LogoImg}></Logo>
           </RightContainer>
         </InnerContainer>
         {extendNavbar && (
