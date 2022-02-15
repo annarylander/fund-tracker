@@ -24,6 +24,7 @@ export default function Footer() {
         <Flex>
           <ul>
             <li>FUNDWISE </li>
+
             <li>example@example.com</li>
           </ul>
           <ul>

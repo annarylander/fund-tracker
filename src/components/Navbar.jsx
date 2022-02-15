@@ -6,7 +6,7 @@ import LogoImg from "../assets/logo2.png";
 const NavbarContainer = styled.nav`
   width: 100%;
   height: ${(props) => (props.extendNavbar ? "100vh" : "80px")};
-  background-color: #55B77C;
+  background-color: #55b77c;
   display: flex;
   flex-direction: column;
 
@@ -70,14 +70,15 @@ const NavbarLinkExtended = styled(Link)`
   text-align: center;
 `;
 
-const Logo = styled.img`
-  margin: 0px;
+const Logo = styled.h1`
+  color: #fff;
+  margin-right: 5px;
+  font-size: 30px;
   max-width: 180;
   height: auto;
 
   @media (min-width: 700px) {
-}
-
+  }
 `;
 
 const OpenLinksButton = styled.button`
@@ -113,7 +114,7 @@ export default function Navbar() {
             <NavbarLinkContainer>
               <NavbarLink to="/">Hem</NavbarLink>
               <NavbarLink to="/about">Om</NavbarLink>
-              <NavbarLink to="/funds">Fonder</NavbarLink>
+              <NavbarLink to="/fund">Fonder</NavbarLink>
               <OpenLinksButton
                 onClick={() => {
                   setExtendNavbar((curr) => !curr);
@@ -124,14 +125,14 @@ export default function Navbar() {
             </NavbarLinkContainer>
           </LeftContainer>
           <RightContainer>
-            <Logo src={LogoImg}></Logo>
+            <Logo>Fundwise</Logo>
           </RightContainer>
         </InnerContainer>
         {extendNavbar && (
           <ExtendedContainer>
             <NavbarLinkExtended to="/">Home</NavbarLinkExtended>
             <NavbarLinkExtended to="/about">About</NavbarLinkExtended>
-            <NavbarLinkExtended to="/contact">Contact</NavbarLinkExtended>
+            <NavbarLinkExtended to="/fund">Contact</NavbarLinkExtended>
           </ExtendedContainer>
         )}
       </NavbarContainer>
