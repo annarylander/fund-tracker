@@ -9,14 +9,6 @@ export default function LandingPage() {
   return (
     <div>
       <Header />
-      <Container>
-        <Flex>
-        {content.map((item, index) => (
-          <Card key={index} item={item} />
-        ))}
-        </Flex>
-      </Container>
-     
     </div>
   );
 }

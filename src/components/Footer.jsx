@@ -6,6 +6,9 @@ import styled from "styled-components";
 const FooterStyled = styled.div`
   background-color: #55b77c;
   padding: 100px 0 60px;
+  display: flex;
+  justify-content: center;
+
   ul {
     list-style-type: none;
   }
@@ -20,24 +23,22 @@ const FooterStyled = styled.div`
 export default function Footer() {
   return (
     <FooterStyled>
-      <Container>
-        <Flex>
-          <ul>
-            <li>FUNDWISE </li>
+      <Flex>
+        <ul>
+          <li>FUNDWISE </li>
 
-            <li>example@example.com</li>
-          </ul>
-          <ul>
-            <li>About Us</li>
-            <li>FAQ</li>
-          </ul>
+          <li>example@example.com</li>
+        </ul>
+        <ul>
+          <li>About Us</li>
+          <li>FAQ</li>
+        </ul>
 
-          <ul>
-            <li>Blog</li>
-            <li>Contact Us</li>
-          </ul>
-        </Flex>
-      </Container>
+        <ul>
+          <li>Blog</li>
+          <li>Contact Us</li>
+        </ul>
+      </Flex>
     </FooterStyled>
   );
 }

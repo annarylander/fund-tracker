@@ -6,6 +6,7 @@ export default function ContactPage() {
   return (
     <div>
       <Container>
+        <h1> Alla fonder </h1>
         <FundList />
       </Container>
     </div>

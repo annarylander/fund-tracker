@@ -6,7 +6,7 @@ import LogoImg from "../assets/logo2.png";
 const NavbarContainer = styled.nav`
   width: 100%;
   height: ${(props) => (props.extendNavbar ? "100vh" : "80px")};
-  background-color: #55b77c;
+  background-color: #034732;
   display: flex;
   flex-direction: column;
 
@@ -26,7 +26,7 @@ const RightContainer = styled.div`
   flex: 30%;
   display: flex;
   justify-content: flex-end;
-  // padding-right: 50px;
+  padding-right: 50px;
 `;
 
 const InnerContainer = styled.div`
@@ -50,7 +50,8 @@ const NavbarLink = styled(Link)`
   &:hover {
     opacity: 0, 7;
     transform: scale(0.98);
-    color: #C0D8D2;
+    color: #fff;
+    font-weight: 600;
   }
 
   @media (max-width: 700px) {
@@ -72,8 +73,9 @@ const NavbarLinkExtended = styled(Link)`
 
 const Logo = styled.h1`
   color: #fff;
-  margin-right: 5px;
+  margin: 20px;
   font-size: 30px;
+  font-weight: 700;
   max-width: 180;
   height: auto;
 

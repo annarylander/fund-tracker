@@ -1,6 +1,14 @@
 import React from "react";
-import Header2 from "../components/Header2";
+import { Container } from "../components/Container.styled";
+import Card from "../components/Card";
+import content from "../content";
 
 export default function AboutPage() {
-  return <Header2 />;
+  return (
+    <Container>
+      {content.map((item, index) => (
+        <Card key={index} item={item} />
+      ))}
+    </Container>
+  );
 }

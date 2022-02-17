@@ -2,19 +2,19 @@ const content = [
   {
     id: 1,
     title: "Jämför olika fonder",
-    body: "Här kommer lite säljande text.",
+    body: "Sök på olika svenska fonder och jämför dem med varandra",
     image: "image1.jpg",
   },
   {
     id: 2,
-    title: "Smarta verktyg",
-    body: "Här kommer lite mer text osv...",
+    title: "Ta rygg på de bästa",
+    body: "Se aktieinnehavet för olika fonder",
     image: "image2.jpeg",
   },
   {
     id: 3,
-    title: "Allt på ett ställe",
-    body: "Fortfarande inte övertygad, här är en till anledning",
+    title: "Smarta verktyg",
+    body: "....",
     image: "image3.jpeg",
   },
 ];

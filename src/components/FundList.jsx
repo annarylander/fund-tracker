@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 export default function FundList() {
   const [list, setList] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+ 
 
   useEffect(() => {
     console.log("use effect ran");
@@ -15,6 +16,7 @@ export default function FundList() {
     setIsLoading(false);
   }, []);
 
+
   return (
     <div>
       {isLoading && <div> Is loading... </div>}
@@ -22,7 +24,9 @@ export default function FundList() {
         list.map((item, index) => {
           return (
             <div key={index}>
-              <Link to={`/fund/${item}`}>{item} </Link>
+              <p>
+                <Link to={`/fund/${item}`}>{item} </Link>
+              </p>
             </div>
           );
         })}
