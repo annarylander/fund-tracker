@@ -37,7 +37,7 @@ const IconButton = styled.button`
   background: none;
 `;
 
-export default function Searchbar() {
+export default function Searchbar(props) {
   return (
     <div>
       <SearchContainer>

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Card } from "../components/Card";
 
 export default function SearchPage() {
   const [query, setQuery] = useState("");
@@ -21,9 +22,9 @@ export default function SearchPage() {
       .then((data) => setResult(data.results));
   }
 
-  //   if (!result) {
-  //     return <p>Please log in</p>;
-  //   }
+  if (!result) {
+    return <p>Please wait</p>;
+  }
 
   return (
     <>
@@ -39,10 +40,10 @@ export default function SearchPage() {
       </div>
 
       {result &&
-        result.map((item, index) => {
+        result.slice("").map((item, index) => {
           return (
             <div className="" key={index}>
-              <p>◦ {item.fundName}</p>
+              <p>◦ {item}</p>
             </div>
           );
         })}

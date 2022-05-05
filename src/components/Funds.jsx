@@ -14,7 +14,10 @@ const Funds = ({ funds, loading }) => {
     <ul className="list-group mb-10 mt-10">
       {funds.map((fund, index) => (
         <Links key={index}>
-          <Link to={`/fund/${fund}`}>{fund} </Link>
+          <Link to={`/fund/${fund}`}>
+            {" "}
+            <p>{fund}</p>{" "}
+          </Link>
         </Links>
       ))}
     </ul>

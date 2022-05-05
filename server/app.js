@@ -33,7 +33,6 @@ app.get("/fund", async (req, res) => {
     const fund = await Fund.find({}, { fundName: 1, _id: 1 }).distinct(
       "fundName",
       function (err, fund) {
-        console.log(fund);
         res.json({
           data: fund,
         });
@@ -75,13 +74,19 @@ app.get("/fund/:fundName", async (req, res) => {
 
 //search fund
 app.post("/fund/search", async (req, res) => {
+  console.log(req.body.query);
   try {
-    const results = await Fund.find({
-      $text: {
-        $search: req.body.query,
+    const results = await Fund.find(
+      {
+        $text: {
+          $search: req.body.query,
+        },
       },
+      { fundName: 1 }
       // fundName: { $regex: req.body.query, $options: "i" },
-    });
+    ).distinct("fundName");
+
+    console.log(results);
     res.status(201).json({ results });
   } catch (err) {
     console.log(err);

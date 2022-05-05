@@ -14,9 +14,40 @@ body {
 }
 
 p {
-  line-height: 1.5;
+  line-height: 1;
+  color: black;
+}
+
+a:link {
+  text-decoration: none;
 }
 
 img {
   max-width: 100%;
+}
+
+.pagination > li > a {
+  background-color: white;
+  color: #052703;
+}
+
+.pagination > li > a:focus,
+.pagination > li > a:hover,
+.pagination > li > span:focus,
+.pagination > li > span:hover {
+  color: #5a5a5a;
+  background-color: #eee;
+  border-color: #ddd;
+  cursor: pointer;
+}
+
+.pagination > .active > a {
+  color: white;
+  background-color: #052703 !important;
+  border: solid 1px #052703 !important;
+}
+
+.pagination > .active > a:hover {
+  background-color: #052703 !important;
+  border: solid 1px #052703;
 }

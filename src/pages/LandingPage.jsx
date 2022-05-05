@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Container } from "../components/Container.styled";
 import content from "../content";
 import Card from "../components/Card";
@@ -13,13 +13,11 @@ export default function LandingPage() {
   //   e.preventDefault();
   //   const payload = { query };
   //   const url = "http://localhost:8000/fund/search";
-  //   const token = localStorage.getItem("token");
 
   //   fetch(url, {
   //     method: "POST",
   //     headers: {
   //       "Content-Type": "application/json",
-  //       Authorization: `Bearer ${token}`,
   //     },
   //     body: JSON.stringify(payload),
   //   })

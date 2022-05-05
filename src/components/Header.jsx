@@ -17,7 +17,6 @@ const HeaderContainer = styled.div`
   align-items: center;
   justify-content: center;
   background-color: #1a2123;
-  color: #fff;
 `;
 
 const Title = styled.h1`
@@ -27,13 +26,17 @@ const Title = styled.h1`
   color: #fff;
 `;
 
+const Text = styled.p`
+  color: #fff;
+`;
+
 export default function Header(props) {
   console.log(props.result);
   return (
     <HeaderContainer>
       <TextDiv>
         <Title> Sök på en fond </Title>
-        <p>Se vad den har för aktieinnehav</p>
+        <Text>Se vad den har för aktieinnehav</Text>
         <Searchbar />
       </TextDiv>
     </HeaderContainer>
