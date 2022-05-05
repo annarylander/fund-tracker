@@ -6,6 +6,7 @@ import LandingPage from "./pages/LandingPage";
 import ListPage from "./pages/ListPage";
 import AboutPage from "./pages/AboutPage";
 import DetailPage from "./pages/DetailPage";
+import SearchPage from "./pages/SearchPage";
 import Footer from "./components/Footer";
 
 function App() {
@@ -17,7 +18,8 @@ function App() {
         <Route path="/" element={<LandingPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/fund" element={<ListPage />} />
-        <Route path="/fund/:id" element={<DetailPage />} />
+        <Route path="/search" element={<SearchPage />} />
+        <Route path="/fund/:fundName" element={<DetailPage />} />
       </Routes>
     </div>
   );

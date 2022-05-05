@@ -12,7 +12,7 @@ export default function ListPage() {
 
   useEffect(() => {
     console.log("use effect ran");
-    const url = "http://localhost:8000/";
+    const url = "http://localhost:8000/fund";
 
     fetch(url)
       .then((res) => res.json())
@@ -24,6 +24,7 @@ export default function ListPage() {
   const indexOfLastFund = currentPage * fundsPerPage;
   const indexOfFirstFund = indexOfLastFund - fundsPerPage;
   const currentFund = funds.slice(indexOfFirstFund, indexOfLastFund);
+  console.log(funds, typeof funds);
 
   //Change page
   const paginate = (pageNumber) => setCurrentPage(pageNumber);

@@ -3,8 +3,7 @@ import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import styled from "styled-components";
 
-const Links = styled.p`
-`;
+const Links = styled.p``;
 
 const Funds = ({ funds, loading }) => {
   if (loading) {
@@ -13,8 +12,8 @@ const Funds = ({ funds, loading }) => {
 
   return (
     <ul className="list-group mb-10 mt-10">
-      {funds.map((fund) => (
-        <Links key={fund._id}>
+      {funds.map((fund, index) => (
+        <Links key={index}>
           <Link to={`/fund/${fund}`}>{fund} </Link>
         </Links>
       ))}

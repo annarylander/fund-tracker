@@ -6,7 +6,7 @@ import LogoImg from "../assets/logo2.png";
 const NavbarContainer = styled.nav`
   width: 100%;
   height: ${(props) => (props.extendNavbar ? "100vh" : "80px")};
-  background-color: #034732;
+  background-color: #1a2123;
   display: flex;
   flex-direction: column;
 
@@ -43,14 +43,14 @@ const NavbarLinkContainer = styled.div`
 const NavbarLink = styled(Link)`
   color: white;
   font-size: large;
-  font-family: Helvetica, sans-serif;
+  font-family: Inter, sans-serif;
   text-decoration: none;
   margin 10px;
 
   &:hover {
     opacity: 0, 7;
     transform: scale(0.98);
-    color: #fff;
+    color: #1dce80;
     font-weight: 600;
   }
 
@@ -63,7 +63,7 @@ const NavbarLink = styled(Link)`
 const NavbarLinkExtended = styled(Link)`
   color: white;
   font-size: large;
-  font-family: Helvetica, sans-serif;
+  font-family: Inter, sans-serif;
   text-decoration: none;
   margin 10px;
   display: flex;
@@ -72,7 +72,7 @@ const NavbarLinkExtended = styled(Link)`
 `;
 
 const Logo = styled.h1`
-  color: #fff;
+  color: #1dce80;
   margin: 20px;
   font-size: 30px;
   font-weight: 700;
@@ -117,6 +117,7 @@ export default function Navbar() {
               <NavbarLink to="/">Hem</NavbarLink>
               <NavbarLink to="/about">Om</NavbarLink>
               <NavbarLink to="/fund">Fonder</NavbarLink>
+              <NavbarLink to="/search">Sök</NavbarLink>
               <OpenLinksButton
                 onClick={() => {
                   setExtendNavbar((curr) => !curr);
