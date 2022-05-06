@@ -4,9 +4,8 @@ import { Routes, Route, Link } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import LandingPage from "./pages/LandingPage";
 import ListPage from "./pages/ListPage";
-import AboutPage from "./pages/AboutPage";
+import About from "./components/About";
 import DetailPage from "./pages/DetailPage";
-import SearchPage from "./pages/SearchPage";
 import Footer from "./components/Footer";
 
 function App() {
@@ -16,11 +15,11 @@ function App() {
 
       <Routes>
         <Route path="/" element={<LandingPage />} />
-        <Route path="/about" element={<AboutPage />} />
+        <Route path="/about" element={<About />} />
         <Route path="/fund" element={<ListPage />} />
-        <Route path="/search" element={<SearchPage />} />
         <Route path="/fund/:fundName" element={<DetailPage />} />
       </Routes>
+      <Footer />
     </div>
   );
 }

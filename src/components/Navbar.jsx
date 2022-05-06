@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import LogoImg from "../assets/logo2.png";
+import About from "./About";
 
 const NavbarContainer = styled.nav`
   width: 100%;
@@ -117,7 +118,6 @@ export default function Navbar() {
               <NavbarLink to="/">Hem</NavbarLink>
               <NavbarLink to="/about">Om</NavbarLink>
               <NavbarLink to="/fund">Fonder</NavbarLink>
-              <NavbarLink to="/search">Sök</NavbarLink>
               <OpenLinksButton
                 onClick={() => {
                   setExtendNavbar((curr) => !curr);
@@ -134,7 +134,7 @@ export default function Navbar() {
         {extendNavbar && (
           <ExtendedContainer>
             <NavbarLinkExtended to="/">Home</NavbarLinkExtended>
-            <NavbarLinkExtended to="/about">About</NavbarLinkExtended>
+            <NavbarLinkExtended to={About}>About</NavbarLinkExtended>
             <NavbarLinkExtended to="/fund">Contact</NavbarLinkExtended>
           </ExtendedContainer>
         )}

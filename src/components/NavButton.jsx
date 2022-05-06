@@ -25,7 +25,7 @@ const Button = styled.button`
 `;
 
 const GreenButton = styled(Button)`
-  background: #437567;
+  background: #1dce80;
   color: white;
 `;
 

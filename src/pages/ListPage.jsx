@@ -6,7 +6,7 @@ import { Container } from "react-bootstrap";
 
 export default function ListPage() {
   const [funds, setFunds] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
   const [fundsPerPage] = useState(30);
 

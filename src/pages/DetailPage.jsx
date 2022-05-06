@@ -5,13 +5,13 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 const Section = styled.div`
   width: 100%;
-  height: 100vh;
   padding: 50px;
 `;
 
 export default function DetailPage(props) {
   const { fundName } = useParams();
   const [detail, setDetail] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const url = `http://localhost:8000/fund/${fundName}`;
@@ -19,8 +19,12 @@ export default function DetailPage(props) {
     fetch(url)
       .then((res) => res.json())
       .then((data) => setDetail(data.fund));
-    console.log(detail);
+    setLoading(false);
   }, []);
+
+  if (loading) {
+    return <h2>Loading...</h2>;
+  }
 
   return (
     <Section>
@@ -32,8 +36,7 @@ export default function DetailPage(props) {
           <tr>
             <th scope="col">Fund name</th>
             <th scope="col">Share</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
+            <th scope="col">Date</th>
           </tr>
         </thead>
         {detail &&

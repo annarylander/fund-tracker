@@ -5,4 +5,9 @@ export const Container = styled.div`
   max-width: 100%;
   padding: 0 20px;
   margin: 0 auto;
+  background-color: #fff;
+`;
+
+export const newContainer = styled(Container)`
+  background-color: #000;
 `;

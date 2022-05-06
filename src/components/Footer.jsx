@@ -27,16 +27,16 @@ export default function Footer() {
         <ul>
           <li>FUNDWISE </li>
 
-          <li>example@example.com</li>
+          <li>Mail</li>
         </ul>
         <ul>
-          <li>About Us</li>
+          <li>About</li>
           <li>FAQ</li>
         </ul>
 
         <ul>
           <li>Blog</li>
-          <li>Contact Us</li>
+          <li>Contact</li>
         </ul>
       </Flex>
     </FooterStyled>

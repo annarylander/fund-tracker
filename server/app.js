@@ -28,6 +28,7 @@ app.use(cors());
 //   }
 // });
 
+// Get all funds
 app.get("/fund", async (req, res) => {
   try {
     const fund = await Fund.find({}, { fundName: 1, _id: 1 }).distinct(
@@ -43,22 +44,7 @@ app.get("/fund", async (req, res) => {
   }
 });
 
-// get fund by name
-// app.get("/fund/:fundName", (req, res) => {
-//   console.log(req.params.fundName);
-//   Fund.find(
-//     {
-//       fundName: req.params.fundName,
-//     },
-//     function (err, fund) {
-//       if (err) return err;
-//       res.send({
-//         data: fund,
-//       });
-//     }
-//   );
-// });
-
+// Get one fund
 app.get("/fund/:fundName", async (req, res) => {
   console.log(req.params.fundName);
   try {
@@ -72,7 +58,7 @@ app.get("/fund/:fundName", async (req, res) => {
   }
 });
 
-//search fund
+//Search fund
 app.post("/fund/search", async (req, res) => {
   console.log(req.body.query);
   try {
@@ -83,7 +69,6 @@ app.post("/fund/search", async (req, res) => {
         },
       },
       { fundName: 1 }
-      // fundName: { $regex: req.body.query, $options: "i" },
     ).distinct("fundName");
 
     console.log(results);
