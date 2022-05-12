@@ -1,23 +1,17 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import Pagination from "../components/Pagination";
 import Funds from "../components/Funds";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Container } from "react-bootstrap";
+import FundContext from "../context/FundContext";
 
 export default function ListPage() {
-  const [funds, setFunds] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const { funds, loading, fetchFunds } = useContext(FundContext);
+
   const [currentPage, setCurrentPage] = useState(1);
   const [fundsPerPage] = useState(30);
 
   useEffect(() => {
-    console.log("use effect ran");
-    const url = "http://localhost:8000/fund";
-
-    fetch(url)
-      .then((res) => res.json())
-      .then((data) => setFunds(data.data));
-    setLoading(false);
+    fetchFunds();
   }, []);
 
   // Get current posts
