@@ -1,11 +1,14 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  width: 1000px;
-  max-width: 100%;
-  padding: 0 20px;
+  width: 100%;
+  padding: 40px;
   margin: 0 auto;
-  background-color: #fff;
+  min-height: 100vh;
+
+  @media (max-width: 680px) {
+    padding: 20px;
+  }
 `;
 
 export const newContainer = styled(Container)`

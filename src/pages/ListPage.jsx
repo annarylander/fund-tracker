@@ -3,6 +3,7 @@ import Pagination from "../components/Pagination";
 import Funds from "../components/Funds";
 import "bootstrap/dist/css/bootstrap.min.css";
 import FundContext from "../context/FundContext";
+import { Container } from "../components/Container.styled";
 
 export default function ListPage() {
   const { funds, loading, fetchFunds } = useContext(FundContext);
@@ -11,6 +12,7 @@ export default function ListPage() {
   const [fundsPerPage] = useState(30);
 
   useEffect(() => {
+    console.log("use effect ran in listpage");
     fetchFunds();
   }, []);
 
@@ -18,13 +20,12 @@ export default function ListPage() {
   const indexOfLastFund = currentPage * fundsPerPage;
   const indexOfFirstFund = indexOfLastFund - fundsPerPage;
   const currentFund = funds.slice(indexOfFirstFund, indexOfLastFund);
-  console.log(funds, typeof funds);
 
   //Change page
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   return (
-    <div className="container mt-5">
+    <Container>
       <h1>Fonder</h1>
       <Funds funds={currentFund} loading={loading} />
       <Pagination
@@ -32,6 +33,6 @@ export default function ListPage() {
         totalFunds={funds.length}
         paginate={paginate}
       />
-    </div>
+    </Container>
   );
 }

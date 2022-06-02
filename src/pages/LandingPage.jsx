@@ -3,6 +3,7 @@ import About from "../components/About";
 import { Link } from "react-router-dom";
 import { BiSearchAlt2 } from "react-icons/bi";
 import styled from "styled-components";
+import NavLink, { StyledLink } from "../components/NavLink";
 
 const TextDiv = styled.div`
   display: flex;
@@ -30,6 +31,9 @@ const Title = styled.h1`
   font-family: "Poppins", sans-serif;
   font-weight: 700;
   color: #fff;
+  @media (max-width: 680px) {
+    font-size: 30px;
+  }
 `;
 
 const Text = styled.p`
@@ -41,15 +45,6 @@ const SearchResult = styled.div`
   text-align: left;
   z-index: 1;
   position: relative;
-`;
-
-const StyledLink = styled(Link)`
-  color: #cecece;
-  cursor: pointer;
-  text-decoration: none;
-  &:hover {
-    color: #1dce80;
-  }
 `;
 
 const SearchBar = styled.div`
@@ -125,13 +120,17 @@ export default function LandingPage() {
             result.slice("").map((fund, index) => {
               return (
                 <SearchResult key={index}>
-                  <StyledLink to={`/fund/${fund}`}>{fund}</StyledLink>
+                  <NavLink light to={`/fund/${fund}`}>
+                    {fund}
+                  </NavLink>
                 </SearchResult>
               );
             })}
         </TextDiv>
       </HeaderContainer>
-      <About />
+      <div id="a">
+        <About id={"about"} />
+      </div>
     </>
   );
 }

@@ -34,12 +34,14 @@ app.get("/fund", async (req, res) => {
     const fund = await Fund.find({}, { fundName: 1, _id: 1 }).distinct(
       "fundName",
       function (err, fund) {
+        console.log(fund);
         res.json({
           data: fund,
         });
       }
     );
-  } catch {
+  } catch (err) {
+    console.log(err);
     res.status(400);
   }
 });
@@ -48,7 +50,31 @@ app.get("/fund", async (req, res) => {
 app.get("/fund/:fundName", async (req, res) => {
   console.log(req.params.fundName);
   try {
-    const fund = await Fund.findOne({ fundName: req.params.fundName });
+    let fund = await Fund.aggregate([
+      {
+        $match: {
+          fundName: req.params.fundName,
+        },
+      },
+      { $unwind: "$fundHoldings" },
+      { $sort: { "fundHoldings.shareOfFund": -1 } },
+
+      {
+        $group: {
+          _id: "$_id",
+          fundName: { $first: "$fundName" },
+          fundHoldings: { $push: "$fundHoldings" },
+        },
+      },
+      {
+        $sort: { holdingsDate: -1 },
+      },
+      {
+        $limit: 1,
+      },
+    ]);
+    fund = fund[0];
+    console.log(fund);
     res.json({
       fund,
     });
@@ -68,7 +94,7 @@ app.post("/fund/search", async (req, res) => {
           $search: req.body.query,
         },
       },
-      { fundName: 1 }
+      { fundName: 1, _id: 1 }
     ).distinct("fundName");
 
     console.log(results);

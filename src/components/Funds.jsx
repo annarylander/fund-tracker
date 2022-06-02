@@ -1,17 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
-import styled from "styled-components";
-
-const StyledLink = styled(Link)`
-  color: #000;
-  line-height: 0.6;
-  cursor: pointer;
-  text-decoration: none;
-  &:hover {
-    color: #1dce80;
-  }
-`;
+import NavLink, { StyledLink, GreenLink } from "./NavLink";
 
 const Funds = ({ funds, loading }) => {
   if (loading) {
@@ -22,10 +11,10 @@ const Funds = ({ funds, loading }) => {
     <ul className="list-group mb-10 mt-10">
       {funds.map((fund, index) => (
         <div key={index}>
-          <StyledLink to={`/fund/${fund}`}>
+          <NavLink to={`/fund/${fund}`}>
             {" "}
             <p>{fund}</p>{" "}
-          </StyledLink>
+          </NavLink>
         </div>
       ))}
     </ul>

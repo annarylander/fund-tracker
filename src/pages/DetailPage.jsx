@@ -2,9 +2,11 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router";
 import styled from "styled-components";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { Container } from "../components/Container.styled";
 
 const Section = styled.div`
   width: 100%;
+  height: 100%;
   padding: 50px;
 `;
 
@@ -27,13 +29,14 @@ export default function DetailPage(props) {
   }
 
   return (
-    <Section>
+    <Container>
       <h2>{fundName} </h2>
 
       <h5>Fund holdings:</h5>
+
       <table class="table table-sm">
         <thead>
-          <tr>
+          <tr class="table-light">
             <th scope="col">Fund name</th>
             <th scope="col">Share</th>
             <th scope="col">Date</th>
@@ -51,6 +54,6 @@ export default function DetailPage(props) {
             );
           })}
       </table>
-    </Section>
+    </Container>
   );
 }

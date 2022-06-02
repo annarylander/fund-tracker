@@ -25,17 +25,13 @@ export default function Footer() {
     <FooterStyled>
       <Flex>
         <ul>
-          <li>FUNDWISE </li>
-
           <li>Mail</li>
         </ul>
         <ul>
           <li>About</li>
-          <li>FAQ</li>
         </ul>
 
         <ul>
-          <li>Blog</li>
           <li>Contact</li>
         </ul>
       </Flex>
